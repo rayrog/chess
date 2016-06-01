@@ -20,7 +20,7 @@ public class Jeu implements Game{
 	
 	public boolean isPieceHere(int x,int y){
 		
-		Coord coord = new Coord(x, y);
+		Coord coord = new Coord(x, y);		//Conversion des parametres en coordonnées
 		if (map.containsKey(coord)){
 			return true;
 		}else {
@@ -36,11 +36,20 @@ public class Jeu implements Game{
 		return true;
 	}
 	
-	public boolean move(int xInit,int yInit,int xFinal,int yFinal)
-		{
-		
-		return false;
+	public boolean move(int xInit,int yInit,int xFinal,int yFinal){
+		boolean isCatchOk = true, isCastlingPossible = true;
+		Coord coord = new Coord(xInit, yInit);
+		Pieces piece = map.get(coord);
+		if(isMoveOk(xInit,yInit,xFinal,yFinal,isCatchOk,isCastlingPossible)){
+			piece.move(xFinal, yFinal);
+			map.remove(coord);
+			Coord newCoord = new Coord(xFinal, yFinal);
+			map.put(newCoord, piece);
+			return true;
+		}else{
+			return false;
 		}
+	}
 	
 	
 	public void setPossibleCapture(){}
@@ -70,6 +79,4 @@ public class Jeu implements Game{
 		return null;
 		
 	}
-
-	public static void main(java.lang.String[] args){}
 }

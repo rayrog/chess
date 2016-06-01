@@ -36,7 +36,14 @@ public class Main{
 */
 		
 		Jeu equipeNoire = new Jeu(Couleur.NOIR);
-		System.out.println(equipeNoire);
+		
+		/* Test JEU */
+		//System.out.println(equipeNoire);
+		
+		//equipeNoire.move(5, 1, 5, 2);
+		//equipeNoire.isPieceHere(5, 2);
+		
+		
 	}
 	
 	public static void testPiece(Pieces piece){
