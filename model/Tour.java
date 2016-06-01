@@ -8,9 +8,13 @@ public class Tour extends AbstractPiece
 
 	public boolean isMoveOk(int xFinal,int yFinal,boolean isCatchOk,boolean isCastlingPossible)
 	{
-		// sait ou elle est , a ses coordonné, et coordonné de destination donné
-		return true;		
-		
+		// sait ou elle est , a ses coordonnï¿½, et coordonnï¿½ de destination donnï¿½
+		if (this.getX() == xFinal || this.getY() == yFinal){
+			return true;
+		}
+		else {
+			return false;		
+		}
 	}
 
 }
