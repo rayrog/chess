@@ -2,44 +2,39 @@ package model;
 
 public abstract class AbstractPiece extends java.lang.Object implements Pieces{
 	
-	
-
 	private Couleur Couleur;
 	private Coord Coord;
-
 
 	public AbstractPiece(Couleur couleur,Coord coord)
 	{
 		this.Couleur=couleur;
 		this.Coord=coord;
 	}
+	
 	@Override
 	public java.lang.String toString(){
-		return "tmp";
+		return "Nom= " + getName() + "couleur " + getCouleur() + "Coord : X = " + getX() + ", Y = " + getY() + "]";
 	}
 	
 	@Override
+	
 	public int getX() {
-		
-		return 0;
+		return this.Coord.x;
 	}
 
 	@Override
 	public int getY() {
-		
-		return 0;
+		return this.Coord.y;
 	}
 
 	@Override
 	public Couleur getCouleur() {
-
-		return null;
+		return this.Couleur;
 	}
 
 	@Override
-	public String getName() {
-	
-		return null;
+	public String getName(){
+		return this.getClass().getSimpleName();
 	}
 
 	@Override
@@ -47,19 +42,17 @@ public abstract class AbstractPiece extends java.lang.Object implements Pieces{
 
 	@Override
 	public boolean move(int xFinal, int yFinal) {
-		return false;
+		this.Coord.x=xFinal;
+		this.Coord.y=yFinal;
+		return true;
 	}
 
 	@Override
 	public boolean capture() {
-
-		return false;
+		this.Coord.y=-1;
+		this.Coord.x=-1;
+		return true;
 	}
-	
-	public void main(){
-		Pieces maTour = new Tour(Couleur.NOIR, new Coord(0, 0));
-	}
-	
-	
+		
 }
 
