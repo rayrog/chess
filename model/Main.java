@@ -22,11 +22,7 @@ public class Main{
 		} else {
 			System.out.println("Mouvement impossible gros con !");
 		}
-		
-		
-		
-		
-		
+				
 	}
 
 }
