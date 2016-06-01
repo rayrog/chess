@@ -4,16 +4,22 @@ import java.util.List;
 import tools.*;
 
 public class Jeu implements Game{
-	List<Pieces> jeu;
+	List<Pieces> equipe;
 	
 	public Jeu(Couleur couleur){
-		this.jeu=ChessPiecesFactory.newPieces(couleur);
+		this.equipe=ChessPiecesFactory.newPieces(couleur);
 	}
 	
 	public boolean isPieceHere(int x,int y){
-		if (this.jeu.)
-		return true;
-	}
+		boolean result=false;
+		for (Pieces p1 : equipe){
+			if (p1.getX()==x && p1.getY()==y && this==p1)
+			{
+				result=true;
+			}
+		}
+		return result;
+		}
 
 	public boolean isMoveOk(int xInit,int yInit,int xFinal,int yFinal,boolean isCatchOk,boolean isCastlingPossible){
 		return true;
@@ -52,5 +58,7 @@ public class Jeu implements Game{
 		
 	}
 
-	public static void main(java.lang.String[] args){}
+	public static void main(java.lang.String[] args){
+
+	}
 }
