@@ -3,19 +3,15 @@ import java.util.List;
 
 import tools.*;
 
-public class Jeu 
-	{
-	List<Pieces> piecesBlanche;
-	List<Pieces> piecesNoir;
+public class Jeu implements Game{
+	List<Pieces> jeu;
 	
 	public Jeu(Couleur couleur){
-		this.piecesNoir=ChessPiecesFactory.newPieces(Couleur.NOIR);
-		this.piecesBlanche=ChessPiecesFactory.newPieces(Couleur.BLANC);
+		this.jeu=ChessPiecesFactory.newPieces(couleur);
 	}
 	
 	public boolean isPieceHere(int x,int y){
-
-		
+		if (this.jeu.)
 		return true;
 	}
 
