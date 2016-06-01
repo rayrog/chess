@@ -1,18 +1,16 @@
 package model;
 
-import tools.ChessPiecesFactory;
-
-public class Roi extends AbstractPiece
+public class Pion extends AbstractPiece
 {
 
-	public Roi(Couleur couleur, Coord coord) {
+	public Pion(Couleur couleur, Coord coord) {
 		super(couleur, coord);
 	}
 
 	public boolean isMoveOk(int xFinal,int yFinal,boolean isCatchOk,boolean isCastlingPossible)
 	{
 		// sait ou elle est , a ses coordonn�, et coordonn� de destination donn�
-		if ((Math.pow((xFinal - this.getX()), 2) == 1 && yFinal - this.getY() == 0) || Math.pow((yFinal - this.getY()), 2) == 1 && xFinal - this.getX() == 0 ){
+		if ( ((xFinal - this.getX() == 0 || xFinal - this.getX() == 1 ) && yFinal - this.getY() == 0) || (xFinal == this.getX() && yFinal == this.getY())   ){
 			return true;
 		}
 		else {
@@ -20,6 +18,4 @@ public class Roi extends AbstractPiece
 		}
 	}
 
-
-	
 }
