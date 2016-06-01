@@ -8,7 +8,8 @@ import java.util.Scanner;
 public class Main{
 
 	public static void main(String[] args) {
-		
+/* TEST CREATION PIECE + DEPLACEMENTS POSSIBLES
+ 		
 		System.out.println("Test tour :");
 		Pieces tourBlanche1 = new Tour(Couleur.BLANC, new Coord(3,3));
 		testPiece(tourBlanche1);
@@ -31,7 +32,13 @@ public class Main{
 		System.out.println("Test Cheval :");
 		Pieces chevalBlanc = new Cheval(Couleur.BLANC, new Coord(3,1));
 		testPiece(chevalBlanc);	
-
+		
+*/
+		
+		Jeu equipeNoire = new Jeu(Couleur.NOIR);
+		//System.out.println(equipeNoire);
+		//equipeNoire.getPieceColor(7,0);
+		System.out.println(equipeNoire.getPieceName(7,1));
 	}
 	
 	public static void testPiece(Pieces piece){

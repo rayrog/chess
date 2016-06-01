@@ -1,9 +1,9 @@
 package model;
 
-public class Cheval extends AbstractPiece
+public class Cavalier extends AbstractPiece
 {
 
-	public Cheval(Couleur couleur, Coord coord) {
+	public Cavalier(Couleur couleur, Coord coord) {
 		super(couleur, coord);
 	}
 
