@@ -13,7 +13,7 @@ public abstract class AbstractPiece extends java.lang.Object implements Pieces{
 	
 	@Override
 	public java.lang.String toString(){
-		return "Nom= " + getName() + "couleur " + getCouleur() + "Coord : X = " + getX() + ", Y = " + getY() + "]";
+		return "\n Nom= " + getName() + "\n couleur= " + getCouleur() + "\n Coord= (" + getX() + ", Y = " + getY() +")" ;
 	}
 	
 	@Override

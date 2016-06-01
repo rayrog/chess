@@ -12,15 +12,13 @@ public class Main{
 	
 	public static void testPiece(Pieces piece){
 
-		int xFinal = 2, yFinal = 1 ;
+		int xFinal = 1, yFinal = 2 ;
 		Boolean isCatchOk = true, isCastlingPossible = true;
-		
-		
-		System.out.println("Initial : \n " + piece);
+
 		
 		if(piece.isMoveOk(xFinal, yFinal, isCatchOk, isCastlingPossible)){
 			piece.move(xFinal, yFinal);
-			System.out.println("Après mouvement" + piece);
+			System.out.println("Après mouvement " + piece);
 		} else {
 			System.out.println("Mouvement impossible gros con !");
 		}
