@@ -8,10 +8,11 @@ import tools.*;
 public class Jeu implements Game{
 	List<Pieces> equipe;
 	Map<Coord, Pieces> map = new HashMap<>();
+	private Couleur couleur;
 	
 	public Jeu(Couleur couleur){
 		this.equipe=ChessPiecesFactory.newPieces(couleur);
-		
+		this.couleur = couleur;
 		/* COnvertit ma liste en map pour raccourcir les temps d'accès*/
 		for(Pieces p1 : equipe ){
 			map.put(new Coord(p1.getX(),p1.getY()),p1);
@@ -91,12 +92,11 @@ public class Jeu implements Game{
 	}
 
 	public Couleur getCouleur(){
-		
-		
-		return null;}
+		return this.couleur;
+	}
 	
+	//Option payante (Voir nos tarifs sur www.tarifs.fr)
 	public void setCastling(){
-		
 	}
 	
 	public java.util.List<PieceIHMs> getPiecesIHM(){

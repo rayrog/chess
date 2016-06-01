@@ -1,6 +1,7 @@
 package model;
 public class Tour extends AbstractPiece
-{
+{	
+	private boolean hasMoved = false;
 
 	public Tour(Couleur couleur, Coord coord) {
 		super(couleur, coord);
@@ -16,5 +17,15 @@ public class Tour extends AbstractPiece
 			return false;		
 		}
 	}
+	
+	public boolean move(int xFinal, int yFinal) {
+		super.move(xFinal, yFinal);
+		this.hasMoved = true;
+		return true;
+	}
+	
 
+	public boolean HasMoved() {
+		return hasMoved;
+	}
 }
