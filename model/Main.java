@@ -1,5 +1,6 @@
 package model;
 
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -36,7 +37,8 @@ public class Main{
 */
 		
 		Jeu equipeNoire = new Jeu(Couleur.NOIR);
-
+		
+		
 		/* Test JEU */
 		//System.out.println(equipeNoire);
 		
@@ -44,6 +46,10 @@ public class Main{
 		//equipeNoire.isPieceHere(5, 2);
 		//equipeNoire.getPieceColor(7,0);
 		//System.out.println(equipeNoire.getPieceName(7,1));
+		//Couleur C1= equipeNoire.getCouleur();
+		//System.out.println(C1);
+		List<PieceIHMs> L1=equipeNoire.getPiecesIHM();
+		System.out.println(L1);
 	}
 	
 	public static void testPiece(Pieces piece){
