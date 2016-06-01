@@ -29,7 +29,7 @@ public class Jeu implements Game{
 			return false;
 		}
 	}
-
+	
 	public boolean isMoveOk(int xInit,int yInit,int xFinal,int yFinal,boolean isCatchOk,boolean isCastlingPossible){
 		Coord coord = new Coord(xInit, yInit);
 		if (map.containsKey(coord)){

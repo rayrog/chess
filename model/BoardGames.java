@@ -32,7 +32,7 @@ public interface BoardGames {
 	public String getMessage();
 
 	/**
-	 * @return la couleur du jouer courant
+	 * @return la couleur du joueur courant
 	 */
 	public Couleur getColorCurrentPlayer();
 	
