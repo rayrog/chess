@@ -36,7 +36,7 @@ public class Main{
 		
 */
 		
-		Jeu equipeNoire = new Jeu(Couleur.NOIR);
+		
 		
 		/* Test JEU */
 		// Jeu equipeNoire = new Jeu(Couleur.NOIR);
@@ -48,8 +48,49 @@ public class Main{
 
 		//Couleur C1= equipeNoire.getCouleur();
 		//System.out.println(C1);
-		List<PieceIHMs> L1=equipeNoire.getPiecesIHM();
+		//List<PieceIHMs> L1=equipeNoire.getPiecesIHM();
+		//System.out.println(L1);
+		
+		/* TEST DE ECHIQUIER  */
+		
+		Echiquier echiquier1 = new Echiquier();
+		List<PieceIHMs> L1=echiquier1.getPiecesIHM();
 		System.out.println(L1);
+		
+		/*
+		Couleur C1 = echiquier1.getPieceColor(2,7);
+		System.out.println(C1);
+		
+		
+		Couleur C2 =echiquier1.getColorCurrentPlayer();
+		System.out.println(C2);
+		
+		System.out.println(echiquier1.getMessage());
+		
+		System.out.println(echiquier1);
+		
+		
+		Couleur C2 =echiquier1.getColorCurrentPlayer();
+		System.out.println(C2);
+		echiquier1.switchJoueur();
+		C2 =echiquier1.getColorCurrentPlayer();
+		System.out.println(C2);
+		
+		*/
+		
+		Boolean a, b;
+		a=echiquier1.isMoveOk(0,0,0,2);
+		System.out.println(a);
+		Jeu jeu1 = new Jeu(Couleur.NOIR);
+		b=jeu1.isMoveOk(0,0,0,2,true, true);
+		System.out.println(b);
+		
+		echiquier1.move(0,0,0,2);
+		System.out.println(L1);
+		
+
+		
+		
 	}
 	
 	public static void testPiece(Pieces piece){

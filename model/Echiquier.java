@@ -1,12 +1,17 @@
 package model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Echiquier {
 	
 	private Jeu equipeNoire, equipeBlanc, joueurCourant ;
-	private String message = "";
+	private String message = "Message par défaut";
 	
 
-	public Echiquier(Jeu equipe1, Jeu equipe2, Jeu joueurCourant){
+	public Echiquier(){
+		Jeu equipe1 = new Jeu(Couleur.NOIR);
+		Jeu equipe2 = new Jeu(Couleur.BLANC);
 		this.equipeNoire = equipe1;
 		this.equipeBlanc = equipe2;
 		this.joueurCourant = equipe2; // Les blancs commencent ;)
@@ -37,8 +42,7 @@ public class Echiquier {
 	public boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal){
 		boolean isCatchOk=true, isCastlingPossible=true;
 		
-		Coord coord = new Coord(xInit, yInit);
-		if (this.joueurCourant.map.containsKey(coord) && (xFinal != xInit && yFinal != yInit)){
+		if (xFinal != xInit || yFinal != yInit){
 			this.joueurCourant.isMoveOk(xInit, yInit, xFinal, yFinal, isCatchOk, isCastlingPossible);
 			return true;
 		} 
@@ -73,10 +77,23 @@ public class Echiquier {
 	 */
 	public Couleur getPieceColor(int x, int y){
 		Coord coord = new Coord(x, y);
-		if(this.joueurCourant.map.containsKey(coord)){
-			return this.joueurCourant.map.get(coord).getCouleur();
+		if(this.equipeNoire.map.containsKey(coord)){
+			return this.equipeNoire.map.get(coord).getCouleur();
+		}
+		else if (this.equipeBlanc.map.containsKey(coord)){
+			return this.equipeBlanc.map.get(coord).getCouleur();
 		}
 		return Couleur.NOIRBLANC;
+	}
+	
+	
+	public List<PieceIHMs> getPiecesIHM(){		
+		List<PieceIHMs> L1=equipeNoire.getPiecesIHM();
+		List<PieceIHMs> L2=equipeBlanc.getPiecesIHM();
+		List<PieceIHMs> list = new LinkedList<PieceIHMs>();
+		list.addAll(L1);
+		list.addAll(L2);
+		return list;
 	}
 
 }
