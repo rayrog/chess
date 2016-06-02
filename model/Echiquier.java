@@ -1,5 +1,8 @@
 package model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Echiquier {
 	
 	private Jeu equipeNoire, equipeBlanc, joueurCourant ;
@@ -67,6 +70,16 @@ public class Echiquier {
 	 */
 	public Couleur getPieceColor(int x, int y){
 		return null;
+	}
+	
+	
+	public List<PieceIHMs> getPiecesIHM(){		
+		List<PieceIHMs> L1=equipeNoire.getPiecesIHM();
+		List<PieceIHMs> L2=equipeNoire.getPiecesIHM();
+		List<PieceIHMs> list = new LinkedList<PieceIHMs>();
+		list.addAll(L1);
+		list.addAll(L2);
+		return list;
 	}
 
 }

@@ -36,7 +36,7 @@ public class Main{
 		
 */
 		
-		Jeu equipeNoire = new Jeu(Couleur.NOIR);
+		
 		
 		/* Test JEU */
 		// Jeu equipeNoire = new Jeu(Couleur.NOIR);
@@ -48,9 +48,15 @@ public class Main{
 
 		//Couleur C1= equipeNoire.getCouleur();
 		//System.out.println(C1);
-		List<PieceIHMs> L1=equipeNoire.getPiecesIHM();
+		//List<PieceIHMs> L1=equipeNoire.getPiecesIHM();
+		//System.out.println(L1);
+		Jeu equipe1 = new Jeu(Couleur.NOIR);
+		Jeu equipe2 = new Jeu(Couleur.BLANC);
+		
+		Echiquier echiquier1 = new Echiquier(equipe1, equipe2, equipe2);
+		List<PieceIHMs> L1=echiquier1.getPiecesIHM();
 		System.out.println(L1);
-	}
+		}
 	
 	public static void testPiece(Pieces piece){
 		
