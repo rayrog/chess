@@ -22,14 +22,12 @@ public class Jeu implements Game{
 	}
 
 	public boolean isPieceHere(int x,int y){
-
+		Boolean bool=false;
 		Coord coord = new Coord(x, y);		//Conversion des parametres en coordonnées
-
 		if (map.containsKey(coord)){
-			return true;
-		}else {
-			return false;
-		}
+			bool=true;
+			}
+		return bool;
 	}
 
 	//private Pieces findPiece(int x, int y) 
@@ -37,8 +35,8 @@ public class Jeu implements Game{
 
 	public boolean isMoveOk(int xInit,int yInit,int xFinal,int yFinal,boolean isCatchOk,boolean isCastlingPossible){
 		Coord coord = new Coord(xInit, yInit);
-		if (map.containsKey(coord) && !(xFinal == xInit && yFinal == yInit) ){ // On empeche le cas ou il y a une pièce sur la case finale
-				return map.get(coord).isMoveOk(xFinal, yFinal, isCatchOk, isCastlingPossible);			
+		if (map.containsKey(coord)){ // On empeche le cas ou il y a une pièce sur la case finale
+			return map.get(coord).isMoveOk(xFinal, yFinal, isCatchOk, isCastlingPossible);	// fixme
 		}
 		return false;
 	}

@@ -6,7 +6,7 @@ import java.util.List;
 public class Echiquier {
 	
 	private Jeu equipeNoire, equipeBlanc, joueurCourant ;
-	private String message = "Message par dï¿½faut";
+	private String message = "La partie commence";
 	
 
 	public Echiquier(){
@@ -37,18 +37,23 @@ public class Echiquier {
 		} else {
 			this.joueurCourant = equipeNoire;
 		}
+		setMessage("\nC'est aux " + this.joueurCourant.getCouleur()+ " de jouer");
 	}
 	
 	public boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal){ //Doit vÃ©rifier si on ne depasse pas les bords, si il n'y a pas de sgens sur le passage
-		boolean isCatchOk=true, isCastlingPossible=true;
+		boolean isCatchOk=true, isCastlingPossible=true, bool=false;
 		
 		if (!(xFinal == xInit && yFinal == yInit)){ // Si on a bougÃ©
-			return this.joueurCourant.isMoveOk(xInit, yInit, xFinal, yFinal, isCatchOk, isCastlingPossible);
+			bool=this.joueurCourant.isMoveOk(xInit, yInit, xFinal, yFinal, isCatchOk, isCastlingPossible);
 		} 
-		return false;
+		if (bool == false){
+			setMessage("Deplacement interdit, mais ou vas tu ?");
+			}
+		return bool;
 	}
 	
 	public boolean move (int xInit, int yInit, int xFinal, int yFinal){ 
+		setMessage("On a bougé de " + xInit + ";" + yInit + " à "+ xFinal + ";" + yFinal );
 		return this.joueurCourant.move(xInit, yInit, xFinal, yFinal);
 	}
 

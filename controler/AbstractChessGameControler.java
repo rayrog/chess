@@ -41,12 +41,14 @@ public abstract class AbstractChessGameControler implements ChessGameControlers 
 
 		// si c'est bien au tour du joueur courant de jouer
 		if (this.isPlayerOK(initCoord)) {
-
+		
 			// Déplacement métier
-			ret = this.moveModel(initCoord, finalCoord);	 
+			ret = this.moveModel(initCoord, finalCoord);
+
 
 			// Actions différentes selon les types de controleur
 			if (ret) {	
+				
 				this.endMove(initCoord, finalCoord, promotionType);
 			}
 
