@@ -31,7 +31,7 @@ public class LauncherGUI {
 		JFrame frame;	
 		Dimension dim;
 	
-		dim = new Dimension(700, 700);
+		dim = new Dimension(610, 630);
 		
 		chessGame = new ChessGame();	
 		chessGameControler = new ChessGameControler(chessGame);
@@ -45,6 +45,8 @@ public class LauncherGUI {
 		frame.setPreferredSize(dim);
 		frame.pack();
 		frame.setVisible(true);
+		
+
 		
 		
 	}

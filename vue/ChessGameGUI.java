@@ -3,10 +3,14 @@ package vue;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
+import java.util.List;
+
 import javax.swing.*;
-import java.util.Observable;
 
 import controler.ChessGameControlers;
+import model.Couleur;
+import model.PieceIHM;
+import tools.ChessImageProvider;
 
 public class ChessGameGUI extends javax.swing.JFrame implements java.awt.event.MouseListener, java.awt.event.MouseMotionListener, java.util.Observer
 {
@@ -43,11 +47,24 @@ public class ChessGameGUI extends javax.swing.JFrame implements java.awt.event.M
 				else
 					square.setBackground( i % 2 == 0 ? Color.white : Color.blue );
 			}
+			
+
 		}
 	
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		// TODO Auto-generated method stub
+
+		List<PieceIHM> piecesIHM = (List<PieceIHM>) arg1;
+
+		JLabel newPiece;
+				
+		// création d'un tableau 2D avec les noms des pièces
+		for(PieceIHM p: piecesIHM) {
+			int i = p.getY()*8+ p.getX();
+			JPanel panel = (JPanel)chessBoard.getComponent(i);
+			newPiece = new JLabel( new ImageIcon(ChessImageProvider.getImageFile(p.getNamePiece(), p.getCouleur())));
+			panel.add(newPiece);
+		}
 		
 	}
 
