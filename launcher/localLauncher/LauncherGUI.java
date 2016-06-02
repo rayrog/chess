@@ -36,7 +36,8 @@ public class LauncherGUI {
 		chessGame = new ChessGame();	
 		chessGameControler = new ChessGameControler(chessGame);
 		
-		frame = new ChessGameGUI("Jeu d'échec", chessGameControler,  dim);
+		//frame = new ChessGameGUI("Jeu d'échec", chessGameControler,  dim);
+		frame = new ChessGameGUI();
 		chessGame.addObserver((Observer) frame);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,5 +45,7 @@ public class LauncherGUI {
 		frame.setPreferredSize(dim);
 		frame.pack();
 		frame.setVisible(true);
+		
+		
 	}
 }
