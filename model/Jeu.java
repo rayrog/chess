@@ -38,9 +38,10 @@ public class Jeu implements Game{
 	public boolean isMoveOk(int xInit,int yInit,int xFinal,int yFinal,boolean isCatchOk,boolean isCastlingPossible){
 		Coord coord = new Coord(xInit, yInit);
 		if (map.containsKey(coord)){
-			map.get(coord).isMoveOk(xFinal, yFinal, isCatchOk, isCastlingPossible); //Piece
+			map.get(coord).isMoveOk(xFinal, yFinal, isCatchOk, isCastlingPossible); 
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	public boolean move(int xInit,int yInit,int xFinal,int yFinal){
