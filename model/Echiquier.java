@@ -43,15 +43,13 @@ public class Echiquier {
 		boolean isCatchOk=true, isCastlingPossible=true;
 		
 		if (xFinal != xInit || yFinal != yInit){
-			this.joueurCourant.isMoveOk(xInit, yInit, xFinal, yFinal, isCatchOk, isCastlingPossible);
-			return true;
+			return this.joueurCourant.isMoveOk(xInit, yInit, xFinal, yFinal, isCatchOk, isCastlingPossible);
 		} 
 		return false;
 	}
 	public boolean move (int xInit, int yInit, int xFinal, int yFinal){
 		if (this.isMoveOk(xInit, yInit, xFinal, yFinal)){
-			this.joueurCourant.move(xInit, yInit, xFinal, yFinal);
-			return true;
+			return this.joueurCourant.move(xInit, yInit, xFinal, yFinal);
 		}
 		return false;
 	}
