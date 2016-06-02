@@ -39,13 +39,19 @@ public class Echiquier {
 	
 	public boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal){
 		boolean isCatchOk=true, isCastlingPossible=true;
+		
 		Coord coord = new Coord(xInit, yInit);
-		if (this.joueurCourant.map.containsKey(coord)){
-			this.joueurCourant.isMoveOk(xFinal, yFinal, isCatchOk, isCastlingPossible); 
-		}
-		return true;
+		if (this.joueurCourant.map.containsKey(coord) && (xFinal != xInit && yFinal != yInit)){
+			this.joueurCourant.isMoveOk(xInit, yInit, xFinal, yFinal, isCatchOk, isCastlingPossible);
+			return true;
+		} 
+		return false;
 	}
 	public boolean move (int xInit, int yInit, int xFinal, int yFinal){
+		if (this.isMoveOk(xInit, yInit, xFinal, yFinal)){
+			this.joueurCourant.move(xInit, yInit, xFinal, yFinal);
+			return true;
+		}
 		return false;
 	}
 
@@ -53,14 +59,14 @@ public class Echiquier {
 	 * @return true si c'est la fin du jeu
 	 */
 	public boolean isEnd(){
-		return true;
+		return false;
 	}
 
 	/**
 	 * @return la couleur du joueur courant
 	 */
 	public Couleur getColorCurrentPlayer(){
-		return null;
+		return this.joueurCourant.getCouleur();
 	}
 	
 	/**
@@ -69,7 +75,11 @@ public class Echiquier {
 	 * @return la couleur de la pièce sélectionnée
 	 */
 	public Couleur getPieceColor(int x, int y){
-		return null;
+		Coord coord = new Coord(x, y);
+		if(this.joueurCourant.map.containsKey(coord)){
+			return this.joueurCourant.map.get(coord).getCouleur();
+		}
+		return Couleur.NOIRBLANC;
 	}
 	
 	
