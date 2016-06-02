@@ -37,10 +37,12 @@ public class Jeu implements Game{
 
 	public boolean isMoveOk(int xInit,int yInit,int xFinal,int yFinal,boolean isCatchOk,boolean isCastlingPossible){
 		Coord coord = new Coord(xInit, yInit);
+		boolean bool = false; 
+		
 		if (map.containsKey(coord) && !(xFinal == xInit && yFinal == yInit) ){ // On empeche le cas ou il y a une pièce sur la case finale
-				return map.get(coord).isMoveOk(xFinal, yFinal, isCatchOk, isCastlingPossible);			
+				bool = map.get(coord).isMoveOk(xFinal, yFinal, isCatchOk, isCastlingPossible);			
 		}
-		return false;
+		return bool;
 	}
 
 	public boolean move(int xInit,int yInit,int xFinal,int yFinal){

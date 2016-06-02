@@ -18,23 +18,22 @@ public class Pion extends AbstractPiece
 
 	public boolean isMoveOk(int xFinal,int yFinal,boolean isCatchOk,boolean isCastlingPossible)
 	{
-		// sait ou elle est , a ses coordonn�, et coordonn� de destination donn�
-		if (yFinal - this.getY() == 1 && xFinal == this.getX()) { //On avance d'une case
-			return true;
-		} else if(yFinal - this.getY() == 2 && xFinal == this.getX()){ //Deplacement de deux cases
+		boolean bool =false;
+		if (Math.abs(yFinal - this.getY()) == 1 && xFinal == this.getX()) { //On avance d'une case
+			bool = true;
+		} else if(Math.abs(yFinal - this.getY()) == 2 && xFinal == this.getX()){ //Deplacement de deux cases 
 			if(!this.hasMoved){//Si le pion n'a pas bouger de sa position de depart
-				this.setHasMoved(true);
-				return true;
+				bool = true;
 			}else
-				return false;
+				bool = false;
 		} 
-		return false;
+		return bool;
 	}
 
 	
 	public boolean move(int xFinal, int yFinal) { //Juste pour mettre le flag hasMoved a true
-		super.move(xFinal, yFinal);
-		this.hasMoved = true;
+		if(super.move(xFinal, yFinal))
+			this.hasMoved = true;
 		return true;
 	}
 }

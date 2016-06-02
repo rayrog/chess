@@ -24,7 +24,7 @@ public class Main{
 		Pieces tourBlanche = new Tour(Couleur.BLANC, new Coord(3,3));
 		Pieces reineBlanche = new Reine(Couleur.BLANC, new Coord(3,3));
 		Pieces roiBlanc= new Roi(Couleur.BLANC, new Coord(3,3));
-		Pieces pionBlanc = new Pion(Couleur.BLANC, new Coord(3,3));
+		Pieces pionBlanc = new Pion(Couleur.BLANC, new Coord(3,6));
 		Pieces fouBlanc = new Fou(Couleur.BLANC, new Coord(3,3));
 		Pieces chevalBlanc = new Cavalier(Couleur.BLANC, new Coord(3,3));
 		
@@ -95,7 +95,9 @@ public class Main{
 		*/
 		
 																										// TEST EN COURS !!!
-		testPiece(reineBlanche);
+		System.out.println(pionBlanc.isMoveOk(3, 4, true, true));
+		System.out.println(equipeBlanc.isMoveOk(3, 6, 3, 4,true,true));
+		//System.out.println(echiquier1.move(0, 6, 0, 4));
 		
 	}
 	
