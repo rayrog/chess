@@ -6,7 +6,7 @@ import java.util.List;
 public class Echiquier {
 	
 	private Jeu equipeNoire, equipeBlanc, joueurCourant ;
-	private String message = "Message par d�faut";
+	private String message = "Message par d�faut";
 	
 
 	public Echiquier(){
@@ -39,19 +39,17 @@ public class Echiquier {
 		}
 	}
 	
-	public boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal){
+	public boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal){ //Doit vérifier si on ne depasse pas les bords, si il n'y a pas de sgens sur le passage
 		boolean isCatchOk=true, isCastlingPossible=true;
 		
-		if (xFinal != xInit || yFinal != yInit){
+		if (!(xFinal == xInit && yFinal == yInit)){ // Si on a bougé
 			return this.joueurCourant.isMoveOk(xInit, yInit, xFinal, yFinal, isCatchOk, isCastlingPossible);
 		} 
 		return false;
 	}
-	public boolean move (int xInit, int yInit, int xFinal, int yFinal){
-		if (this.isMoveOk(xInit, yInit, xFinal, yFinal)){
-			return this.joueurCourant.move(xInit, yInit, xFinal, yFinal);
-		}
-		return false;
+	
+	public boolean move (int xInit, int yInit, int xFinal, int yFinal){ 
+		return this.joueurCourant.move(xInit, yInit, xFinal, yFinal);
 	}
 
 	/**
