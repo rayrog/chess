@@ -26,7 +26,8 @@ public class ChessGameControler extends AbstractChessGameControler {
 	 */
 	@Override
 	public boolean isPlayerOK(Coord initCoord) {
-		// ToDo
+		//ToDO
+		return false;
 	}
 	
 	/* (non-Javadoc)
