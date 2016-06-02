@@ -30,6 +30,10 @@ public class ChessGameControler extends AbstractChessGameControler {
 		if(this.chessGame.getColorCurrentPlayer()==this.chessGame.getPieceColor(initCoord.x,initCoord.y)){
 			bool=true;
 		}
+		/*System.out.println("is playerOK " + bool + "debug");
+		System.out.println("Couleur player" + this.chessGame.getColorCurrentPlayer());
+		System.out.println("Couleur pièce" + this.chessGame.getPieceColor(initCoord.x,initCoord.y));
+		*/
 		return bool;
 	}
 	
