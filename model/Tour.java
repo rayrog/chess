@@ -9,8 +9,7 @@ public class Tour extends AbstractPiece
 
 	public boolean isMoveOk(int xFinal,int yFinal,boolean isCatchOk,boolean isCastlingPossible)
 	{
-		// sait ou elle est , a ses coordonn�, et coordonn� de destination donn�
-		if (this.getX() == xFinal || this.getY() == yFinal){
+		if (this.getX() == xFinal ^ this.getY() == yFinal){ //Si l'on bouge soit selon l'axe x, ou l'axe y
 			return true;
 		}
 		else {
@@ -18,7 +17,7 @@ public class Tour extends AbstractPiece
 		}
 	}
 	
-	public boolean move(int xFinal, int yFinal) {
+	public boolean move(int xFinal, int yFinal) { //Juste pour mettre le flag hasMoved a true
 		super.move(xFinal, yFinal);
 		this.hasMoved = true;
 		return true;

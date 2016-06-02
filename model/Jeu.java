@@ -15,7 +15,7 @@ public class Jeu implements Game{
 		this.equipe=ChessPiecesFactory.newPieces(couleur);
 		this.couleur = couleur;
 		
-		/* COnvertit ma liste en map pour raccourcir les temps d'accès*/
+		/* Convertit ma liste en map pour raccourcir les temps d'accès*/
 		for(Pieces p1 : equipe ){
 			map.put(new Coord(p1.getX(),p1.getY()),p1);
 		}
@@ -37,8 +37,8 @@ public class Jeu implements Game{
 
 	public boolean isMoveOk(int xInit,int yInit,int xFinal,int yFinal,boolean isCatchOk,boolean isCastlingPossible){
 		Coord coord = new Coord(xInit, yInit);
-		if (map.containsKey(coord)){ 
-			return map.get(coord).isMoveOk(xFinal, yFinal, isCatchOk, isCastlingPossible);
+		if (map.containsKey(coord) && !(xFinal == xInit && yFinal == yInit) ){ // On empeche le cas ou il y a une pièce sur la case finale
+				return map.get(coord).isMoveOk(xFinal, yFinal, isCatchOk, isCastlingPossible);			
 		}
 		return false;
 	}
@@ -65,7 +65,8 @@ public class Jeu implements Game{
 
 
 	public boolean capture(int xCatch,int yCatch){
-		return false;}
+		return false;
+	}
 
 
 	@Override

@@ -21,7 +21,7 @@ public class Roi extends AbstractPiece
 		}
 	}
 	
-	public boolean move(int xFinal, int yFinal) {
+	public boolean move(int xFinal, int yFinal) { //Juste pour mettre le flag hasMoved a true
 		super.move(xFinal, yFinal);
 		this.hasMoved = true;
 		return true;

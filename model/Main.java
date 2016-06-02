@@ -21,7 +21,7 @@ public class Main{
 		
 		/* Création de Piece */ 
 		//On crée toutes les pièces à la même position pour faciliter les tests
-		Pieces tourBlanche1 = new Tour(Couleur.BLANC, new Coord(3,3));
+		Pieces tourBlanche = new Tour(Couleur.BLANC, new Coord(3,3));
 		Pieces reineBlanche = new Reine(Couleur.BLANC, new Coord(3,3));
 		Pieces roiBlanc= new Roi(Couleur.BLANC, new Coord(3,3));
 		Pieces pionBlanc = new Pion(Couleur.BLANC, new Coord(3,3));
@@ -95,8 +95,7 @@ public class Main{
 		*/
 		
 																										// TEST EN COURS !!!
-		System.out.println("Test tour :");
-		tourBlanche1.move(4, 4);
+		testPiece(reineBlanche);
 		
 	}
 	
@@ -115,8 +114,8 @@ public class Main{
 			piece.move(xFinal, yFinal);
 			System.out.println("Après mouvement " + piece);
 		} else {
-			System.out.println("Mouvement impossible gros con ! \n");
-			xFinal =99;
+			System.out.println("Mouvement impossible ! \n");
+			//xFinal =99;
 		}
 		
 		}while(xFinal != 99);
