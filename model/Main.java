@@ -78,17 +78,17 @@ public class Main{
 		
 		*/
 		
-		Boolean a, b;
-		a=echiquier1.isMoveOk(0,0,0,2);
+		Boolean a;
+		echiquier1.switchJoueur();// switch equipe noir pour faciliter debug
+		a=echiquier1.isMoveOk(0,0,1,5);
 		System.out.println(a);
-		Jeu jeu1 = new Jeu(Couleur.NOIR);
-		b=jeu1.isMoveOk(0,0,0,2,true, true);
-		System.out.println(b);
-		
-		echiquier1.move(0,0,0,2);
+
+		echiquier1.move(0,0,1,5);
 		System.out.println(L1);
 		
-
+		System.out.println("Test tour :");
+		Pieces tourBlanche1 = new Tour(Couleur.BLANC, new Coord(3,3));
+		testPiece(tourBlanche1);
 		
 		
 	}
