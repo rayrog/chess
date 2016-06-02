@@ -9,55 +9,64 @@ import java.util.Scanner;
 public class Main{
 
 	public static void main(String[] args) {
-/* TEST CREATION PIECE + DEPLACEMENTS POSSIBLES
+																					// CREATION DES OBJETS
+		/* Création d'échiquier */
+		// Conseillé, pratiue si on veut simuler une partie
+		Echiquier echiquier1 = new Echiquier();
+		
+		/* Création de jeu */ 
+		//Une équipe suffit
+		Jeu equipeNoire = new Jeu(Couleur.NOIR);
+		Jeu equipeBlanc = new Jeu(Couleur.BLANC);
+		
+		/* Création de Piece */ 
+		//On crée toutes les pièces à la même position pour faciliter les tests
+		Pieces tourBlanche1 = new Tour(Couleur.BLANC, new Coord(3,3));
+		Pieces reineBlanche = new Reine(Couleur.BLANC, new Coord(3,3));
+		Pieces roiBlanc= new Roi(Couleur.BLANC, new Coord(3,3));
+		Pieces pionBlanc = new Pion(Couleur.BLANC, new Coord(3,3));
+		Pieces fouBlanc = new Fou(Couleur.BLANC, new Coord(3,3));
+		Pieces chevalBlanc = new Cavalier(Couleur.BLANC, new Coord(3,3));
+		
+																					// TEST DES CLASSES
+		/*  Test Piece
  		
 		System.out.println("Test tour :");
-		Pieces tourBlanche1 = new Tour(Couleur.BLANC, new Coord(3,3));
 		testPiece(tourBlanche1);
 
 		System.out.println("Test Reine :");
-		Pieces reineBlanche = new Reine(Couleur.BLANC, new Coord(3,3));
 		testPiece(reineBlanche);	
 
 		System.out.println("Test Roi :");
-		Pieces roiBlanc= new Roi(Couleur.BLANC, new Coord(3,3));
 		testPiece(roiBlanc);		
+		
 		System.out.println("Test Pion :");
-		Pieces pionBlanc = new Pion(Couleur.BLANC, new Coord(3,1));
 		testPiece(pionBlanc);
 
 		System.out.println("Test Fou :");
-		Pieces fouBlanc = new Fou(Couleur.BLANC, new Coord(3,1));
 		testPiece(fouBlanc);
 
 		System.out.println("Test Cheval :");
-		Pieces chevalBlanc = new Cheval(Couleur.BLANC, new Coord(3,1));
 		testPiece(chevalBlanc);	
 		
-*/
+		 */
 		
+		/* Test Jeu
+		System.out.println(equipeNoire);
+		equipeNoire.move(5, 1, 5, 2);
+		equipeNoire.isPieceHere(5, 2);
+		equipeNoire.getPieceColor(7,0);
+		System.out.println(equipeNoire.getPieceName(7,1));
+		Couleur C1= equipeNoire.getCouleur();
+		System.out.println(C1);
+		List<PieceIHMs> L1=equipeNoire.getPiecesIHM();
+		System.out.println(L1);
+		*/
 		
-		
-		/* Test JEU */
-		// Jeu equipeNoire = new Jeu(Couleur.NOIR);
-		//System.out.println(equipeNoire);
-		//equipeNoire.move(5, 1, 5, 2);
-		//equipeNoire.isPieceHere(5, 2);
-		//equipeNoire.getPieceColor(7,0);
-		//System.out.println(equipeNoire.getPieceName(7,1));
-
-		//Couleur C1= equipeNoire.getCouleur();
-		//System.out.println(C1);
-		//List<PieceIHMs> L1=equipeNoire.getPiecesIHM();
-		//System.out.println(L1);
-		
-		/* TEST DE ECHIQUIER  */
-		
-		Echiquier echiquier1 = new Echiquier();
+		/* Test de Echiquier
 		List<PieceIHMs> L1=echiquier1.getPiecesIHM();
 		System.out.println(L1);
-		
-		/*
+				
 		Couleur C1 = echiquier1.getPieceColor(2,7);
 		System.out.println(C1);
 		
@@ -76,20 +85,18 @@ public class Main{
 		C2 =echiquier1.getColorCurrentPlayer();
 		System.out.println(C2);
 		
-		*/
-		
 		Boolean a;
 		echiquier1.switchJoueur();// switch equipe noir pour faciliter debug
 		a=echiquier1.isMoveOk(0,0,1,5);
 		System.out.println(a);
-
 		echiquier1.move(0,0,1,5);
 		System.out.println(L1);
+
+		*/
 		
+																										// TEST EN COURS !!!
 		System.out.println("Test tour :");
-		Pieces tourBlanche1 = new Tour(Couleur.BLANC, new Coord(3,3));
-		testPiece(tourBlanche1);
-		
+		tourBlanche1.move(4, 4);
 		
 	}
 	
