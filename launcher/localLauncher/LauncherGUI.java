@@ -31,13 +31,13 @@ public class LauncherGUI {
 		JFrame frame;	
 		Dimension dim;
 	
-		dim = new Dimension(610, 630);
+		dim = new Dimension(700, 740);
 		
 		chessGame = new ChessGame();	
 		chessGameControler = new ChessGameControler(chessGame);
 		
-		//frame = new ChessGameGUI("Jeu d'échec", chessGameControler,  dim);
-		frame = new ChessGameGUI();
+		frame = new ChessGameGUI("Jeu d'échec", chessGameControler,  dim);
+		//frame = new ChessGameGUI();
 		chessGame.addObserver((Observer) frame);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
