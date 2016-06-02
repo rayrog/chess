@@ -42,8 +42,7 @@ public class Echiquier {
 	public boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal){
 		boolean isCatchOk=true, isCastlingPossible=true;
 		
-		Coord coord = new Coord(xInit, yInit);
-		if (this.joueurCourant.map.containsKey(coord) && (xFinal != xInit && yFinal != yInit)){
+		if (xFinal != xInit || yFinal != yInit){
 			this.joueurCourant.isMoveOk(xInit, yInit, xFinal, yFinal, isCatchOk, isCastlingPossible);
 			return true;
 		} 

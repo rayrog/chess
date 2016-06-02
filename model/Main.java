@@ -78,9 +78,12 @@ public class Main{
 		
 		*/
 		
-		Boolean a = false;
+		Boolean a, b;
 		a=echiquier1.isMoveOk(0,0,0,2);
 		System.out.println(a);
+		Jeu jeu1 = new Jeu(Couleur.NOIR);
+		b=jeu1.isMoveOk(0,0,0,2,true, true);
+		System.out.println(b);
 		
 		echiquier1.move(0,0,0,2);
 		System.out.println(L1);
